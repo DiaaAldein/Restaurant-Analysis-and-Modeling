@@ -5,9 +5,9 @@ import joblib
 import sklearn
 import category_encoders
 
-model = joblib.load('../models/rf_model.pkl')
-features = joblib.load('../models/features.pkl')
-dummies = joblib.load('../models/dummies_dict.pkl')
+model = joblib.load('rf_model.pkl')
+features = joblib.load('features.pkl')
+dummies = joblib.load('dummies_dict.pkl')
 
 def prediction(online_order,book_table,location,rest_type,cuisines,approx_cost_for_two_people,listed_in_type,listed_in_city):
     df = pd.DataFrame(columns=features)
