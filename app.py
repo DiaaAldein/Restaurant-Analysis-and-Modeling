@@ -2,6 +2,8 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import sklearn
+import category_encoders
 
 model = joblib.load('../models/rf_model.pkl')
 features = joblib.load('../models/features.pkl')
@@ -33,7 +35,7 @@ def main():
     
     if st.button("Predict"):
         result = prediction(online_order,book_table,location,rest_type,cuisines,approx_cost_for_two_people,listed_in_type,listed_in_city)
-        result_list = ["Restaurant may success Baad","Restaurant will success Good"]
+        result_list = ["Baad Your Restaurant may not success ","Good Your Restaurant will success "]
         st.text(result_list[result])
         
         
